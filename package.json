@@ -1,0 +1,19 @@
+{
+  "name": "rest_api_node_ts_server",
+  "version": "1.0.0",
+  "description": "REST API's con Express y Typescript",
+  "license": "ISC",
+  "author": "Milton Munoz milton.munozr@outlook.com",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/index.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
