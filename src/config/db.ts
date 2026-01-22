@@ -1,6 +1,8 @@
 import { Sequelize } from "sequelize";
+import dotenv from 'dotenv';
+dotenv.config()
 
-const db = new Sequelize('postgresql://rest_api_node_types_user:18MYwzaItnN59fIzlk1tf9XqsSJ0nuAb@dpg-d5op0n49c44c73fcbdog-a.oregon-postgres.render.com/rest_api_node_types', {
+const db = new Sequelize(process.env.DATABASE_URL!, {
     dialectOptions: {
         ssl: {
             require: false
