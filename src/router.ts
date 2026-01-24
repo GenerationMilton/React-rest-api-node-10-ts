@@ -1,8 +1,9 @@
 
 import { Router } from "express"
-import { createProduct, getProductById, getProducts } from "./handlers/product"
+import { createProduct, getProductById, getProducts, updateProduct } from "./handlers/product"
 import { body, param } from "express-validator"
 import { handleInputErrors } from "./middleware"
+import { IsNumeric } from "sequelize-typescript"
 
 const router = Router()
 
@@ -22,17 +23,27 @@ router.post('/',
     body('name').notEmpty().withMessage('El nombre de Producto no puede ir vacio'),
        
     body('price')
-        .isNumeric().withMessage('valor no válido')
+        .isNumeric().withMessage('Valor no válido')
         .notEmpty().withMessage('El precio de Producto no puede ir vacio')
         .custom(value => value > 0).withMessage('Precio no válido'),
     handleInputErrors,
     createProduct
 )
 
-router.put('/',(req, res) => {
-
-   res.json('Desde PUT')
-})
+router.put('/:id', 
+    
+     // Validacion
+     body('name')
+        .notEmpty().withMessage('El nombre de Producto no puede ir vacio'),
+    body('price')
+        .isNumeric().withMessage('Valor no válido')
+        .notEmpty().withMessage('El precio de Producto no puede ir vacio')
+        .custom(value => value > 0).withMessage('Precio no válido'),
+    body('availability')
+        .isBoolean().withMessage('Valor para disponibilidad no válido'),
+    handleInputErrors,
+    updateProduct
+)
 
 router.patch('/',(req, res) => {
 
