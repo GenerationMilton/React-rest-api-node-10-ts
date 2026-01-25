@@ -14,5 +14,8 @@ describe('GET /api', ()=> {
         console.log(res.headers['content-type'])
         console.log(res.text)
         console.log(res.body.msg)
+
+        expect(res.status).not.toBe(404)
+        expect(res.body.msg).not.toBe('desde api')
     })
 })
