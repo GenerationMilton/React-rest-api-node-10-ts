@@ -23,7 +23,7 @@ export const getProductById = async (req: Request, res: Response) => {
     
     if(!product){
         return res.status(404).json({
-            error: 'Product No Encontrado'
+            error: 'Producto No Encontrado'
         })
     }
 
@@ -50,7 +50,7 @@ export const updateProduct = async (req: Request, res: Response) => {
     
     if(!product){
         return res.status(404).json({
-            error: 'Product No Encontrado'
+            error: 'Producto No Encontrado'
         })
     }
 
@@ -68,7 +68,7 @@ export const updateAvailability = async (req: Request, res: Response) => {
     
     if(!product){
         return res.status(404).json({
-            error: 'Product No Encontrado'
+            error: 'Producto No Encontrado'
         })
     }
 
@@ -86,7 +86,7 @@ export const deleteProduct = async (req: Request, res: Response) => {
     
     if(!product){
         return res.status(404).json({
-            error: 'Product No Encontrado'
+            error: 'Producto No Encontrado'
         })
     }
 
