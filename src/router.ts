@@ -75,7 +75,7 @@ router.get('/', getProducts)
  *          200:
  *              description: Successful Response
  *              content: 
- *                  application/json
+ *                  application/json:
  *                      schema:
  *                          $ref: '#/components/schemas/Product'
  *          404: 
