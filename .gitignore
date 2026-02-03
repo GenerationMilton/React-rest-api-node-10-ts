@@ -17,19 +17,41 @@ pids
 # Coverage reports
 coverage/
 *.lcov
+.nyc_output/
 
 # Dependency directories
 node_modules/
 
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.pnp.*
+.pnp.js
+.pnp.cjs
+
 # Build output
 dist/
 build/
+out/
+.next/
+.next/cache
+.vercel/
+.netlify/
+.serverless/
+
+# Vite / bundler caches
+.vite/
+.cache/
+.cache-loader/
+.parcel-cache/
 
 # TypeScript cache
 *.tsbuildinfo
 
 # Environment variables
 .env
+.env.*
 .env.local
 .env.development.local
 .env.test.local
@@ -42,18 +64,42 @@ Thumbs.db
 # IDE/editor settings
 .vscode/
 .idea/
+*.sublime-workspace
+*.sublime-project
 *.swp
+.history/
 
-# Optional: if using Docker
+# Editor temp files
+*.tmp
+*.temp
+
+# Optional: Docker
 docker-compose.override.yml
 .docker/
 
-# Optional: if using PM2
+# Optional: PM2
 .pm2/
 
-# Optional: if using Prisma or other ORMs
+# Optional: Prisma or other ORMs
 prisma/migrations/
 
-# Optional: if using Next.js or similar frameworks in monorepo
-.next/
-out/
+# Optional: Next.js, Gatsby, or similar
+.cache/
+public/.cache
+
+# Optional: Firebase, Amplify, Netlify, Vercel
+.firebase/
+amplify/
+.vercel/
+netlify.toml
+
+# Optional: Testing / tooling
+jest.config.*.local
+coverage/
+playwright-report/
+
+# Optional: Misc
+*.log.*
+*.local
+*.bak
+*.orig
